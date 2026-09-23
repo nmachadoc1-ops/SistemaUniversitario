@@ -10,11 +10,30 @@ package com.miapp.modelo;
  */
 public abstract class Persona {
     
-    private String nombre;
+    String nombre;
     protected int id;
+    String apellido;
+
+    public Persona(String nombre, int id, String apellido) {
+        this.nombre = nombre;
+        this.id = id;
+        this.apellido = apellido;
+    }
+    
+    
     
     
     public abstract double calcularPago();
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+    
+    
 
     public String getNombre() {
         return nombre;
