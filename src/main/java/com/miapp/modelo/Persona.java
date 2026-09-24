@@ -10,7 +10,7 @@ package com.miapp.modelo;
  */
 public abstract class Persona {
     
-    private String nombre;
+    String nombre;
     protected int id;
     String apellido;
 

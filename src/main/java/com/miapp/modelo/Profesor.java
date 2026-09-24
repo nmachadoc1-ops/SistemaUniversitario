@@ -27,9 +27,7 @@ public class Profesor extends Persona implements IBuscador{
     }
 
     @Override
-    public double calcularPago() {
-        return salarioBase;
-    }
+    public abstract double calcularPago();
 
     public void impartirClase() {
         System.out.println("El profesor " + getNombre() + " está impartiendo una clase.");

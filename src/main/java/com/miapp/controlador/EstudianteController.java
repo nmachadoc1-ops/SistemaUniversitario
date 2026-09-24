@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class EstudianteController implements IBuscador {
+public class EstudianteController implements IBuscador{
 
     // ── Constantes finales ────────────────────────────────────────────────────
     private static final int CANTIDAD_ESTUDIANTES_INICIALES = 12;
@@ -52,23 +52,11 @@ public class EstudianteController implements IBuscador {
     // ── Carga de datos iniciales ──────────────────────────────────────────────
 
     private void inicializarEstudiantes() {
-        estudiantes = new Estudiante[CANTIDAD_ESTUDIANTES_INICIALES];
+        
+        
 
         // Reinicia el contador estático de Estudiante antes de cargar nuevos datos
         Estudiante.reiniciarContador();
-
-        estudiantes[0]  = new Estudiante(1,  "Ana ","García",        "Ingeniería de Sistemas",  4.5);
-        estudiantes[1]  = new Estudiante(2,  "Carlos"," López",      "Ingeniería Civil",        3.8);
-        estudiantes[2]  = new Estudiante(3,  "María", "Rodríguez",   "Medicina",                4.9);
-        estudiantes[3]  = new Estudiante(4,  "José ","Martínez",     "Derecho",                 3.5);
-        estudiantes[4]  = new Estudiante(5,  "Laura ","Sánchez",     "Administración",          4.1);
-        estudiantes[5]  = new Estudiante(6,  "Andrés ","Torres",     "Ingeniería de Sistemas",  3.9);
-        estudiantes[6]  = new Estudiante(7,  "Valentina ","Gómez",   "Psicología",              4.3);
-        estudiantes[7]  = new Estudiante(8,  "Luis ","Herrera",      "Economía",                3.7);
-        estudiantes[8]  = new Estudiante(9,  "Sofía ","Díaz",        "Ingeniería Civil",        4.6);
-        estudiantes[9]  = new Estudiante(10, "Juliana ","Morales",   "Medicina",                4.8);
-        estudiantes[10] = new Estudiante(11, "Ana Milena ","Ruiz",   "Derecho",                 4.0);
-        estudiantes[11] = new Estudiante(12, "Carlos Andrés ","Paz", "Administración",          3.6);
 
         // Log: informa cuántos estudiantes se cargaron usando static getTotalEstudiantes()
         System.out.println("Total de estudiantes cargados: " + Estudiante.getTotalEstudiantes());
@@ -209,5 +197,15 @@ public class EstudianteController implements IBuscador {
                             Estudiante.getTotalEstudiantes());
 
         return true;
+    }
+
+    @Override
+    public void buscarEstudiantePorCurso(String codigoCurso) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void buscarEstudiantePorEstado(String estadoMatricula) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
