@@ -17,7 +17,7 @@ import com.miapp.servicios.IBuscador;
 
 /**
  */
-public class Profesor extends Persona implements IBuscador {
+public class Profesor extends Persona implements IBuscador{
 
     private final double salarioBase;
 

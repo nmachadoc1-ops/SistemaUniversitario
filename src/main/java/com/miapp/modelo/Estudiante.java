@@ -30,16 +30,7 @@ public class Estudiante extends Persona{
         // nuevo: Incrementa el contador estático de estudiantes
         totalEstudiantes++;
     }
-
-        @Override
-        public double calcularPago() {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-    }
-
- 
     
-
     // ── Métodos estáticos (de clase) ──────────────────────────────────────────
 
     public static int getTotalEstudiantes() {
@@ -55,15 +46,8 @@ public class Estudiante extends Persona{
     
     }
 
-    // ── Getters ──────────────────────────────────────────────────────────────
-
-    public Estudiante(String nombre, int id, String apellido) {
-        super(nombre, id, apellido);
-    }
-
-    
+    // ── Getters ──────────────────────────────────────────────────────────
    
-
     public String getCarrera() { 
         return carrera; 
     }
@@ -93,6 +77,7 @@ public class Estudiante extends Persona{
 
     /**
      Método final: no puede ser sobrescrito por subclases
+     * @return 
      */
     @Override
     public final String toString() {
