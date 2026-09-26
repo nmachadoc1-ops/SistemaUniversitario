@@ -4,10 +4,13 @@
  */
 package com.miapp.servicios;
 
+import com.miapp.modelo.Curso;
+
 /**
  *
  * @author Estudiante
  */
 public interface Inscribible {
-    
+
+    void inscribir(Curso curso);
 }
