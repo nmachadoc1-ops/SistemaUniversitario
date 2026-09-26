@@ -187,7 +187,13 @@ public class EstudianteController implements IBuscador{
 
         // Crear nuevo estudiante con ID automático basado en el contador static
         int proximoId = Estudiante.getProximoId();
-        Estudiante nuevoEstudiante = new Estudiante(proximoId, nombre, apellido, carrera, promedio);
+        Estudiante nuevoEstudiante = new Estudiante(
+            carrera,
+            promedio,
+            nombre,
+            proximoId,
+            apellido
+);
 
         // Agregar el nuevo estudiante en la posición correcta
         estudiantes[indiceNuevoEstudiante] = nuevoEstudiante;
