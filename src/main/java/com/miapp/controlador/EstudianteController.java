@@ -51,16 +51,15 @@ public class EstudianteController implements IBuscador{
 
     // ── Carga de datos iniciales ──────────────────────────────────────────────
 
-    private void inicializarEstudiantes() {
-        
-        
+   private void inicializarEstudiantes(){
 
-        // Reinicia el contador estático de Estudiante antes de cargar nuevos datos
-        Estudiante.reiniciarContador();
+    Estudiante.reiniciarContador();
 
-        // Log: informa cuántos estudiantes se cargaron usando static getTotalEstudiantes()
-        System.out.println("Total de estudiantes cargados: " + Estudiante.getTotalEstudiantes());
-    }
+    estudiantes = new Estudiante[CANTIDAD_ESTUDIANTES_INICIALES];
+
+    System.out.println("Total de estudiantes cargados: "
+            + Estudiante.getTotalEstudiantes());
+}
 
     // ── Lógica de búsqueda ────────────────────────────────────────────────────
 
