@@ -1,5 +1,6 @@
 package com.miapp.modelo;
 
+import com.miapp.modelo.utilidades.EstadoMatricula;
 import com.miapp.servicios.Inscribible;
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class Estudiante extends Persona implements Inscribible{
     // ── Atributos de instancia ──────────────────────────────────────────────
     private String carrera;
     private double promedio;
+    private EstadoMatricula estadoMatricula;
     
     private ArrayList<Curso> cursos;
 
@@ -34,6 +36,8 @@ public class Estudiante extends Persona implements Inscribible{
         } else {
             this.promedio = 0.0;  // Por defecto si está fuera de rango
         }
+         
+         this.estadoMatricula=EstadoMatricula.ACTIVO;
         
         // nuevo: Incrementa el contador estático de estudiantes
         totalEstudiantes++;
