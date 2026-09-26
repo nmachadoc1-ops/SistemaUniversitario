@@ -1,18 +1,25 @@
 package com.miapp.modelo;
 
+import com.miapp.servicios.Inscribible;
+import java.util.ArrayList;
+
 /**
  * Modelo: representa la entidad Estudiante.
  */
-public class Estudiante extends Persona{  
+public class Estudiante extends Persona implements Inscribible{  
 
     private static int totalEstudiantes = 0;
+    
     public static final int PROMEDIO_MINIMO = 0;
     public static final int PROMEDIO_MAXIMO = 5;
+    public static final int MAX_MATERIAS = 6;
     public static final String CARRERA_PREDETERMINADA = "Sin especificar";
 
     // ── Atributos de instancia ──────────────────────────────────────────────
     private String carrera;
     private double promedio;
+    
+    private ArrayList<Curso> cursos;
 
     // ── Constructor ───────────────────────────────────────────────────────────
 
@@ -20,6 +27,7 @@ public class Estudiante extends Persona{
         super(nombre, id, apellido);
         this.carrera = carrera;
         this.promedio = promedio;
+        this.cursos = new ArrayList<>();
         
          if (promedio >= PROMEDIO_MINIMO && promedio <= PROMEDIO_MAXIMO) {
             this.promedio = promedio;
@@ -54,6 +62,11 @@ public class Estudiante extends Persona{
 
     public double getPromedio() { 
         return promedio; 
+        
+    }
+    
+    public ArrayList<Curso> getCursos(){
+        return cursos; 
     }
 
     // ── Setters ──────────────────────────────────────────────────────────────
@@ -74,11 +87,21 @@ public class Estudiante extends Persona{
             this.promedio = p;
         }
     }
+    
+    public void inscribir(Curso curso) {
 
-    /**
-     Método final: no puede ser sobrescrito por subclases
-     * @return 
-     */
+        if (curso == null) {
+            return;
+        }
+
+        if (cursos.size() >= MAX_MATERIAS) {
+            return;
+        }
+
+        if (!cursos.contains(curso)) {
+            cursos.add(curso);
+        }
+    }
     @Override
     public final String toString() {
         return "ID: " + id
@@ -90,6 +113,6 @@ public class Estudiante extends Persona{
 
     @Override
     public double calcularPago() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return 0.0;
     }
 }
